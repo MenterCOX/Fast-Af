@@ -1,6 +1,6 @@
 package Game;
 
-public class Bonuses {
+public class Bonuse {
 
 
     public static void testCatchCoin() {

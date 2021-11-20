@@ -18,8 +18,8 @@ public class Player {
 
     public static void testAddScore() {
 
-        Bonuses.testCatchCoin();
-        Bonuses.speedBonus();
+        Bonuse.testCatchCoin();
+        Bonuse.speedBonus();
     }
 
     private static void dead() {
