@@ -1,14 +1,16 @@
-package Game;
+package game;
 
 import javax.swing.*;
+import java.util.Random;
 
 public class Player {
     public static void testdestroy() {
+        Random r = new Random();
         for (int i = 0; i < Main.wallCount; ++i) {
             if (100 <= Main.xwall[i] +20 &&  300 >= Main.xwall[i] && Main.yPlayer <= Main.ywall[i] + 80 && Main.yPlayer + 80 >= Main.ywall[i] ) {
                 for (int j = 0; j < Main.wallCount; ++j) {
-                    Main.xwall[j] = (int) ((Math.random() * 5000) + 5000);
-                    Main.ywall[i] = (int) (50+(Math.random() * 330) );
+                    Main.xwall[j] = ((r.nextInt(50) * 5000) + 5000);
+                    Main.ywall[i] = (50+(r.nextInt(200) * 330) );
                 }
                 --Main.health;
                 if (Main.health == 0) dead();

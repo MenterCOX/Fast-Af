@@ -1,6 +1,7 @@
-package Game;
+package game;
 
 import javax.swing.*;
+import java.util.Random;
 
 public class Main {
     public static Writer writer = new Writer();
@@ -25,11 +26,12 @@ public class Main {
     public static boolean right = false;
 
     private static void startGame() {
+        Random r = new Random();
 
-        //установка координат врагов
+
         for (int i = 0; i < Main.wallCount; ++i) {
-            xwall[i] = (int) ((Math.random() * 5000) + 5000);
-            ywall[i] = (int) (50+(Math.random() * 330) );
+            xwall[i] =  ((r.nextInt(7000) + 1000));
+            ywall[i] =  ((r.nextInt(400) ));
         }
         //рисвание окна
         FrameController.drawFrame();
