@@ -49,7 +49,7 @@ public class Player {
         if (Main.left) Main.yPlayer -=  15;
         if (Main.right) Main.yPlayer +=  15 ;
         if (Main.speedPlayer < 0) Main.speedPlayer = 0;
-        if (Main.speedPlayer > 50) Main.speedPlayer = 50;
+        if (Main.speedPlayer > 51) Main.speedPlayer = 51;
         if (Main.yPlayer < 50) Main.yPlayer = 50;
         if (Main.yPlayer > 350) Main.yPlayer = 350;
     }
