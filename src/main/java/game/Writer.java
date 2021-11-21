@@ -23,9 +23,9 @@ public class Writer extends JComponent {
         //рисование текста на верху экрана
         g.setColor(Color.BLUE);
         g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("скорость: " + Main.speedPlayer + "км/ч", 0, 20);
-        g.drawString("расстояние: " + Main.xPlayer / 30 + "м", 0, 40);
-        g.drawString("здоровье: " + Main.health, 520, 20);
-        g.drawString("очки: " + Main.score, 520, 40);
+        g.drawString("Speed: " + Main.speedPlayer + "km/h", 0, 20);
+        g.drawString("Distance: " + Main.xPlayer / 30 + "m", 0, 40);
+        g.drawString("HP: " + Main.health, 520, 20);
+        g.drawString("Points: " + Main.score, 520, 40);
     }
 }

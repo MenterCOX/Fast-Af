@@ -26,7 +26,7 @@ public class Player {
 
     private static void dead() {
         Main.dead = true;
-        JOptionPane.showMessageDialog(Main.frame, "Вы проиграли!", "FastAF", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(Main.frame, "You lose!", "FastAF", JOptionPane.WARNING_MESSAGE);
         Main.xBackGround = 0;
         Main.xPlayer = 0;
         Main.yPlayer = 200;
@@ -49,7 +49,7 @@ public class Player {
         if (Main.left) Main.yPlayer -=  15;
         if (Main.right) Main.yPlayer +=  15 ;
         if (Main.speedPlayer < 0) Main.speedPlayer = 0;
-        if (Main.speedPlayer > 200) Main.speedPlayer = 200;
+        if (Main.speedPlayer > 50) Main.speedPlayer = 50;
         if (Main.yPlayer < 50) Main.yPlayer = 50;
         if (Main.yPlayer > 350) Main.yPlayer = 350;
     }
