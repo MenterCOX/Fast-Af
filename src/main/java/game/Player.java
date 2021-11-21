@@ -3,9 +3,11 @@ package game;
 import javax.swing.*;
 import java.util.Random;
 
+import static game.Main.r;
+
 public class Player {
     public static void testdestroy() {
-        Random r = new Random();
+
         for (int i = 0; i < Main.wallCount; ++i) {
             if (100 <= Main.xwall[i] +20 &&  300 >= Main.xwall[i] && Main.yPlayer <= Main.ywall[i] + 80 && Main.yPlayer + 80 >= Main.ywall[i] ) {
                 for (int j = 0; j < Main.wallCount; ++j) {

@@ -2,6 +2,8 @@ package game;
 
 import java.util.Random;
 
+import static game.Main.r;
+
 public class GameLoop {
 
     public static void loop() {
@@ -9,7 +11,6 @@ public class GameLoop {
         Player.testAddScore();
         Player.movePlayer();
         WallGeneration.moveEnemy();
-        Random r = new Random();
 
         if (Main.xBackGround <= -640) Main.xBackGround = 0;
         Main.xCoin -= Main.speedPlayer;

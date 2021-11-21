@@ -25,9 +25,9 @@ public class Main {
     public static boolean left = false;
     public static boolean right = false;
 
-    private static void startGame() {
-        Random r = new Random();
+    public static final Random r = new Random();
 
+    private static void startGame() {
 
         for (int i = 0; i < Main.wallCount; ++i) {
             xwall[i] =  ((r.nextInt(7000) + 1000));
