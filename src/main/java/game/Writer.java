@@ -6,13 +6,13 @@ import java.awt.*;
 public class Writer extends JComponent {
     public void paint(Graphics g) {
         //рисование фона
-        g.drawImage(new ImageIcon(Writer.class.getResource("/BackGround.png")).getImage(), Main.xBackGround, 0, null);
-        g.drawImage(new ImageIcon(Writer.class.getResource("/BackGround.png")).getImage(), Main.xBackGround + 640, 0, null);
+        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), Main.xBackGround, 0, null);
+        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), Main.xBackGround + 640, 0, null);
         //рисование игрока
-        g.drawImage(new ImageIcon(Writer.class.getResource("/Player.png")).getImage(), 100, Main.yPlayer, null);
+        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Player.png")).getImage(), 100, Main.yPlayer, null);
         //рисование врагв
         for (int i = 0; i < Main.wallCount; ++i) {
-            g.drawImage(new ImageIcon(Writer.class.getResource("/Wall.png")).getImage(), Main.xwall[i], Main.ywall[i], null);
+            g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Wall.png")).getImage(), Main.xwall[i], Main.ywall[i], null);
         }
         //рисование монеты
         g.setColor(Color.YELLOW);
