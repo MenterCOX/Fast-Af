@@ -14,7 +14,10 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 </properties>
-         <plugin>
+<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<plugins>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.7</version>
@@ -33,5 +36,5 @@
 					</execution>
 				</executions>
 			</plugin>
-
-</project>
+		</plugins>
+	</build>
