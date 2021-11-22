@@ -13,7 +13,7 @@ public class Main {
 
         window.pack();
 
-        window.setLocationRelativeTo(null);
+        window.setLocationRelativeTo(null); // Window will be displayed at the center of the screen
         window.setVisible(true);
 
         gamePanel.startGameThread();

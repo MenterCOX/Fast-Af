@@ -26,8 +26,8 @@ public class AdvPlayer extends AdvEntity {
 
         solidArea = new Rectangle();
         solidArea.x = 8;
-        solidArea.y = 16;
-        solidArea.width = 32;
+        solidArea.y = 12;
+        solidArea.width = 24;
         solidArea.height = 32;
 
         setDefaultValues();
@@ -35,9 +35,9 @@ public class AdvPlayer extends AdvEntity {
     }
     public void setDefaultValues() {
 
-        worldX = gp.tileSize * 5;
-        worldY = gp.tileSize *3;
-        speed = 4;
+        worldX = gp.tileSize * 1;
+        worldY = gp.tileSize * 1;
+        speed = 4; // 4 pixels per frame
         direction = "down";
     }
     public void getPlayerImage() {
@@ -58,6 +58,11 @@ public class AdvPlayer extends AdvEntity {
         }
     }
 
+    /**
+     * Update method.
+     * When user input == w,a,s,d, keyHandler catches this. And this
+     * update method updates the player coordinates
+     */
     public void update() {
 
         if (keyH.upPressed == true || keyH.downPressed == true ||

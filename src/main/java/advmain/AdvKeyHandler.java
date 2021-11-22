@@ -3,13 +3,15 @@ package advmain;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Class that Handles keyboard input and detects what key was pressed/released
+ */
 public class AdvKeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override

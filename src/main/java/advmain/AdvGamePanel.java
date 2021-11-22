@@ -6,6 +6,10 @@ import tile.AdvTileManager;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * SubClass of the JPanel. Game screen function. It will
+ * draw it inside jframe window. implements runnable for using Thread
+ */
 public class AdvGamePanel extends JPanel implements Runnable{
 
     // SCREEN SETTINGS
@@ -19,7 +23,7 @@ public class AdvGamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 
     //World Settings
-    public final int maxWorldCol = 15;
+    public final int maxWorldCol = 30;
     public final int maxWorldRow = 15;
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
@@ -33,6 +37,9 @@ public class AdvGamePanel extends JPanel implements Runnable{
     public AdvPlayer player = new AdvPlayer(this, keyH);
 
 
+    /**
+     * Constructor for Game Panel Class.
+     */
     public AdvGamePanel() {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -42,12 +49,18 @@ public class AdvGamePanel extends JPanel implements Runnable{
         this.setFocusable(true);
     }
 
+    /**
+     * Method that starts main thread of the game and adds it to the main constructor
+     */
     public void startGameThread() {
 
         gameThread = new Thread(this);
         gameThread.start();
     }
 
+    /**
+     * Method that is automatically called by Thread method.
+     */
     @Override
     public void run() { // Game loop 60 fps
 
@@ -56,6 +69,7 @@ public class AdvGamePanel extends JPanel implements Runnable{
         long lastTime = System.nanoTime();
         long currentTime;
 
+        //Main While loop. Exists while gameThread is active
         while(gameThread != null) {
 
             currentTime = System.nanoTime();
@@ -73,12 +87,17 @@ public class AdvGamePanel extends JPanel implements Runnable{
             }
         }
     }
+
+    /**
+     * This update method calls methos from player class, that updates the player coordinates
+     */
     public void update() {
 
         player.update();
     }
     public void paintComponent(Graphics g){
 
+        //This panel is a subclass of JPanel
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
