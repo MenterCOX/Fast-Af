@@ -1,4 +1,4 @@
-package tile;
+package advtile;
 
 import advmain.AdvGamePanel;
 
@@ -12,14 +12,14 @@ import java.io.InputStreamReader;
 public class AdvTileManager {
 
     AdvGamePanel gp;
-    public AdvTile[] tile;
+    public AdvTile[] advtile;
     public int mapTileNum[] [];
 
     public AdvTileManager(AdvGamePanel gp) {
 
         this.gp = gp;
 
-        tile = new AdvTile[10];
+        advtile = new AdvTile[10];
         mapTileNum = new int [gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
@@ -29,26 +29,26 @@ public class AdvTileManager {
     public void getTileImage() {
 
         try {
-            tile[0] = new AdvTile();
-            tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass.png"));
+            advtile[0] = new AdvTile();
+            advtile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/grass.png"));
 
-            tile[1] = new AdvTile();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/wall.png"));
-            tile[1].collision = true;
+            advtile[1] = new AdvTile();
+            advtile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/wall.png"));
+            advtile[1].collision = true;
 
-            tile[2] = new AdvTile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/water.png"));
-            tile[2].collision = true;
+            advtile[2] = new AdvTile();
+            advtile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/water.png"));
+            advtile[2].collision = true;
 
-            tile[3] = new AdvTile();
-            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/earth.png"));
+            advtile[3] = new AdvTile();
+            advtile[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/earth.png"));
 
-            tile[4] = new AdvTile();
-            tile[4].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tree.png"));
-            tile[4].collision = true;
+            advtile[4] = new AdvTile();
+            advtile[4].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tree.png"));
+            advtile[4].collision = true;
 
-            tile[5] = new AdvTile();
-            tile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/sand.png"));
+            advtile[5] = new AdvTile();
+            advtile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/sand.png"));
 
         }
         catch (IOException e){
@@ -102,7 +102,8 @@ public class AdvTileManager {
             int screenX = worldX - gp.player.worldX + gp.player.screenX;
             int screenY = worldY - gp.player.worldY + gp.player.screenY;
 
-            g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+            g2.drawImage(advtile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+
             worldCol++;
 
             if (worldCol == gp.maxWorldCol) {

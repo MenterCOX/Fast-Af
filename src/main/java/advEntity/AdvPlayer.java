@@ -85,7 +85,7 @@ public class AdvPlayer extends AdvEntity {
 
             }
 
-            // Check tile collision
+            // Check advtile collision
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
