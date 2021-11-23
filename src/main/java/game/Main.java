@@ -3,6 +3,12 @@ package game;
 import javax.swing.*;
 import java.util.Random;
 
+/**
+ * @author <Cox>
+ * @since <pre>нояб. 23, 2021</pre>
+ * @version 1.3
+ */
+
 public class Main {
     public static Writer writer = new Writer();
     public static JFrame frame = new JFrame("FastAF");
@@ -27,15 +33,19 @@ public class Main {
 
     public static final Random r = new Random();
 
+    /**
+     * Метод отвечает за начало игры, начальные коородинаты стен
+     * Запускаются методы для появления окна и начала цикла
+     * @see FrameController#drawFrame()
+     * @see GameLoop#loop()
+     */
     private static void startGame() {
 
         for (int i = 0; i < Main.wallCount; ++i) {
             xwall[i] =  ((r.nextInt(7000) + 1000));
             ywall[i] =  ((r.nextInt(400) ));
         }
-        //рисвание окна
         FrameController.drawFrame();
-        //запуск цикла игры
         GameLoop.loop();
     }
 

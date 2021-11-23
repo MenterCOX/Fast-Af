@@ -1,16 +1,23 @@
 package game;
 
-import java.util.Random;
-
 import static game.Main.r;
 
+/**
+ * Класс отвечает за игровой цикл и все что происходит в нем
+ */
 public class GameLoop {
-
+    /**
+     * Метод, в котором зацикливается движения игрока, появление новых препятствий, повление новых монет
+     * @see Player#testdestroy()
+     * @see Player#testAddScore()
+     * @see Player#movePlayer()
+     * @see WallGeneration#wallgen()
+     */
     public static void loop() {
         Player.testdestroy();
         Player.testAddScore();
         Player.movePlayer();
-        WallGeneration.moveEnemy();
+        WallGeneration.wallgen();
 
         if (Main.xBackGround <= -640) Main.xBackGround = 0;
         Main.xCoin -= Main.speedPlayer;

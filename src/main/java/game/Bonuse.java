@@ -1,8 +1,14 @@
 package game;
 
+/**
+ * Класс отвечает за очки, которые начисляются игроку за пройденное расстояние и монеты,
+ * а также за местоположение монеты
+ */
 public class Bonuse {
 
-
+    /**
+     * Метод отвечает за  монету: ее местоположение и начисление очков за неё
+     */
     public static void testCatchCoin() {
         if (100 <= Main.xCoin + 50 && 300 >= Main.xCoin && Main.yPlayer <= Main.yCoin + 50 && Main.yPlayer + 80 >= Main.yCoin) {
             Main.xCoin = (int) (Math.random() * 10000 + 1000);
@@ -11,6 +17,9 @@ public class Bonuse {
         }
     }
 
+    /**
+     * Этот метод отвечает за бонус, который начисляется игроку за скорость
+     */
     public static void speedBonus() {
         if (Main.scoreTime < 0) {
             Main.scoreTime = 30;
