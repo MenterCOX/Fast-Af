@@ -11,8 +11,8 @@ public class ssnake {
     public ssnake(int x1, int y1, int x2, int y2){
         sX[0]=x1;
         sX[1]=x2;
-        sX[0]=y1;
-        sX[1]=y1;
+        sY[0]=y1;
+        sY[1]=y1;
 
 
     }

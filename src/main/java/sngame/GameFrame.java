@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
 
 public class GameFrame extends JPanel implements ActionListener {
 
-    public static JFrame jFrame;
+    public static JFrame jFrame = new JFrame("FastAF");
     public static final int SCALE = 31;
     public static final int WIDTH =20;
     public static final int HEIGHT = 20;
@@ -23,13 +23,13 @@ public class GameFrame extends JPanel implements ActionListener {
     apple ap = new apple(Math.abs((int) (Math.random() * GameFrame.WIDTH - 1)), Math.abs((int) (Math.random() * GameFrame.HEIGHT - 1)));
     Timer timer = new Timer(1000 / speed, this);
 
-    Image img = new ImageIcon ("snImages/apple7.png").getImage();
-    Image fon = new ImageIcon ("snImages/pole2.png").getImage();
-    Image head = new ImageIcon ("snImages/head.png").getImage();
-    Image left = new ImageIcon ("snImages/left.png").getImage();
-    Image niz = new ImageIcon ("snImages/head22.png").getImage();
-    Image right = new ImageIcon ("snImages/head33.png").getImage();
-    Image body = new ImageIcon ("snImages/telo1.png").getImage();
+    Image img = new ImageIcon ("/snImages/apple7.png").getImage();
+    Image fon = new ImageIcon ("/snImages/pole2.png").getImage();
+    Image head = new ImageIcon ("/snImages/head.png").getImage();
+    Image left = new ImageIcon ("/snImages/left.png").getImage();
+    Image niz = new ImageIcon ("/snImages/head22.png").getImage();
+    Image right = new ImageIcon ("/snImages/head33.png").getImage();
+    Image body = new ImageIcon ("/snImages/telo1.png").getImage();
 
 
     public GameFrame() {
@@ -43,35 +43,40 @@ public class GameFrame extends JPanel implements ActionListener {
     // создание клеточек на поле
     public void paint(Graphics g) {
 
-       // g.setColor(Color.CYAN);
+        // g.setColor(Color.CYAN);
         g.fillRect(0, 0, WIDTH * SCALE, HEIGHT * SCALE);
         for (int x = 0; x < WIDTH * SCALE; x += SCALE) {
             g.setColor(Color.CYAN);
-           // g.drawLine(x, 0, x, HEIGHT * SCALE);
+            // g.drawLine(x, 0, x, HEIGHT * SCALE);
 
         }
         for (int y = 0; y < HEIGHT * SCALE; y += SCALE) {
             g.setColor(Color.CYAN);
-          //  g.drawLine(0, y, WIDTH * SCALE, y);
+            //  g.drawLine(0, y, WIDTH * SCALE, y);
         }
         g.drawImage(fon,0 , 0,null);
 
         //яблоко создание
 
-        g.drawImage(img,ap.posX * SCALE + 4, ap.posY * SCALE + 4,null);
+        //g.drawImage(img,ap.posX * SCALE + 4, ap.posY * SCALE + 4,null);
+        g.setColor(Color.RED);
+        g.fillOval(ap.posX*SCALE+1, ap.posY*SCALE+1,SCALE-5,SCALE-5 );
+
 
 
 
 
         for (int l = 1; l < s.lenght; l++) {
             //создание самой змеи
+            g.setColor(Color.GREEN);
+            g.fillRect(s.sX[l] * SCALE + 1, s.sY[l] * SCALE +1, SCALE-5, SCALE -5);
+            g.setColor(Color.WHITE);
+            g.fillRect(s.sX[1] * SCALE + 1, s.sY[1] * SCALE +1, SCALE-5, SCALE -5);
 
-            g.drawImage(body,s.sX[l] * SCALE + 1, s.sY[l] * SCALE + 1, null);
-
-            if (s.direction==2)g.drawImage(niz,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
+            /*/if (s.direction==2)g.drawImage(niz,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
             if (s.direction==1)g.drawImage(left,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
             if (s.direction==3)g.drawImage(right,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
-            if (s.direction==0)g.drawImage(head,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
+            if (s.direction==0)g.drawImage(head,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);*/
 
 
 
@@ -111,13 +116,14 @@ public class GameFrame extends JPanel implements ActionListener {
             }
             if ((s.sX[0] == s.sX[l]) && (s.sY[0] == s.sY[l]))  {
                 timer.stop();
-               JOptionPane.showMessageDialog(null,"Вы проиграли");
+                JOptionPane.showMessageDialog(null,"WASTED");
                 jFrame.setVisible(false);
                 s.lenght =2;
                 s.direction=0;
                 ap.setRandomPosition();
                 jFrame.setVisible(true);
                 timer.start();
+                score=0;
 
 
             }
@@ -126,21 +132,18 @@ public class GameFrame extends JPanel implements ActionListener {
         }
         repaint();
     }
-        //движение по клавишам
-        public class KeyBoard extends KeyAdapter {
-            public void keyPressed(KeyEvent event) {
+    //движение по клавишам
+    public class KeyBoard extends KeyAdapter {
+        public void keyPressed(KeyEvent event) {
 
-                int key = event.getKeyCode();
+            int key = event.getKeyCode();
 
-                if ((key == KeyEvent.VK_UP) && (s.direction != 2)) s.direction = 0;//в обратную сторону нельзя
-                if ((key == KeyEvent.VK_DOWN) && (s.direction != 0)) s.direction = 2;
-                if ((key == KeyEvent.VK_RIGHT) && (s.direction != 3)) s.direction = 1;
-                if ((key == KeyEvent.VK_LEFT) && (s.direction != 1)) s.direction = 3;
+            if ((key == KeyEvent.VK_UP) && (s.direction != 2)) s.direction = 0;//в обратную сторону нельзя
+            if ((key == KeyEvent.VK_DOWN) && (s.direction != 0)) s.direction = 2;
+            if ((key == KeyEvent.VK_RIGHT) && (s.direction != 3)) s.direction = 1;
+            if ((key == KeyEvent.VK_LEFT) && (s.direction != 1)) s.direction = 3;
 
-            }
         }
-
     }
 
-
-
+}
