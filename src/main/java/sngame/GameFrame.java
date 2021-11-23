@@ -12,8 +12,8 @@ public class GameFrame extends JPanel implements ActionListener {
 
     public static JFrame jFrame = new JFrame("FastAF");
     public static final int SCALE = 31;
-    public static final int WIDTH =20;
-    public static final int HEIGHT = 20;
+    public static final int WIDTH =17;
+    public static final int HEIGHT = 17;
 
     public static int speed = 10;
     int score =0;
@@ -29,7 +29,7 @@ public class GameFrame extends JPanel implements ActionListener {
     Image left = new ImageIcon ("res/snImages/left.png").getImage();
     Image niz = new ImageIcon ("res/snImages/head22.png").getImage();
     Image right = new ImageIcon ("res/snImages/head33.png").getImage();
-    Image body = new ImageIcon ("res/snImages/telo1.png").getImage();
+    Image body = new ImageIcon ("res/snImages/body1.png").getImage();
 
 
     public GameFrame() {
@@ -84,13 +84,13 @@ public class GameFrame extends JPanel implements ActionListener {
         }
         g.setColor(Color.WHITE);
         g.setFont(new Font("arial",Font.PLAIN,14));
-        g.drawString("Score:"+score, 550,30);
+        g.drawString("Score:"+score, 460,20);
     }
 
     public static void main(String[] args) {
         jFrame = new JFrame("Title");
         //размер окна
-        jFrame.setSize(WIDTH * SCALE + 6, HEIGHT * SCALE + 28);
+        jFrame.setSize(WIDTH * SCALE +17, HEIGHT * SCALE + 40);
 // закрывает окно
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //расположение окна по центру
@@ -139,7 +139,7 @@ public class GameFrame extends JPanel implements ActionListener {
 
             int key = event.getKeyCode();
 
-            if ((key == KeyEvent.VK_UP) && (s.direction != 2)) s.direction = 0;//в обратную сторону нельзя
+            if ((key == KeyEvent.VK_UP) && (s.direction != 2)) s.direction = 0;
             if ((key == KeyEvent.VK_DOWN) && (s.direction != 0)) s.direction = 2;
             if ((key == KeyEvent.VK_RIGHT) && (s.direction != 3)) s.direction = 1;
             if ((key == KeyEvent.VK_LEFT) && (s.direction != 1)) s.direction = 3;
