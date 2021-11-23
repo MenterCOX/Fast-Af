@@ -14,22 +14,17 @@ public class Writer extends JComponent {
      *          Здесь производится прорисовка всего вышеописанного
      */
     public void paint(Graphics g) {
-        //рисование фона
         g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), Main.xBackGround, 0, null);
         g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), Main.xBackGround + 640, 0, null);
-        //рисование игрока
         g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Player.png")).getImage(), 100, Main.yPlayer, null);
-        //рисование препятствий
         for (int i = 0; i < Main.wallCount; ++i) {
             g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Wall.png")).getImage(), Main.xwall[i], Main.ywall[i], null);
         }
-        //рисование монеты
         g.setColor(Color.YELLOW);
         g.fillOval(Main.xCoin, Main.yCoin, 50, 50);
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 50));
         g.drawString("$", Main.xCoin + 10, Main.yCoin + 42);
-        //рисование текста на верху экрана
         g.setColor(Color.BLUE);
         g.setFont(new Font("Arial", Font.BOLD, 20));
         g.drawString("Speed: " + Main.speedPlayer + "km/h", 0, 20);
