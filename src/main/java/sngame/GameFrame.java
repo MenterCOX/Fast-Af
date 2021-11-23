@@ -23,13 +23,13 @@ public class GameFrame extends JPanel implements ActionListener {
     apple ap = new apple(Math.abs((int) (Math.random() * GameFrame.WIDTH - 1)), Math.abs((int) (Math.random() * GameFrame.HEIGHT - 1)));
     Timer timer = new Timer(1000 / speed, this);
 
-    Image img = new ImageIcon ("src/apple7.png").getImage();
-    Image fon = new ImageIcon ("src/pole2.png").getImage();
-    Image head = new ImageIcon ("src/head.png").getImage();
-    Image left = new ImageIcon ("src/left.png").getImage();
-    Image niz = new ImageIcon ("src/head22.png").getImage();
-    Image right = new ImageIcon ("src/head33.png").getImage();
-    Image body = new ImageIcon ("src/telo1.png").getImage();
+    Image img = new ImageIcon ("snImages/apple7.png").getImage();
+    Image fon = new ImageIcon ("snImages/pole2.png").getImage();
+    Image head = new ImageIcon ("snImages/head.png").getImage();
+    Image left = new ImageIcon ("snImages/left.png").getImage();
+    Image niz = new ImageIcon ("snImages/head22.png").getImage();
+    Image right = new ImageIcon ("snImages/head33.png").getImage();
+    Image body = new ImageIcon ("snImages/telo1.png").getImage();
 
 
     public GameFrame() {
