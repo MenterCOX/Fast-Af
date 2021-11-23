@@ -15,6 +15,7 @@ public class AdvPlayer extends AdvEntity {
 
     public final int screenX;
     public final int screenY;
+    int hasBlood = 0;
 
     public AdvPlayer(AdvGamePanel gp, AdvKeyHandler keyH) {
 
@@ -27,6 +28,8 @@ public class AdvPlayer extends AdvEntity {
         solidArea = new Rectangle();
         solidArea.x = 8;
         solidArea.y = 12;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
         solidArea.width = 24;
         solidArea.height = 32;
 
@@ -35,8 +38,8 @@ public class AdvPlayer extends AdvEntity {
     }
     public void setDefaultValues() {
 
-        worldX = gp.tileSize * 1;
-        worldY = gp.tileSize * 1;
+        worldX = gp.tileSize * 10;
+        worldY = gp.tileSize * 10;
         speed = 4; // 4 pixels per frame
         direction = "down";
     }
@@ -89,6 +92,10 @@ public class AdvPlayer extends AdvEntity {
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
+            // Check object collision
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
+
             // IF Collision is false, player can move
             if (collisionOn == false) {
 
@@ -117,6 +124,31 @@ public class AdvPlayer extends AdvEntity {
                     spriteNum = 1;
                 }
                 spriteCounter = 1;
+            }
+        }
+    }
+
+    /**
+     * @param ind Index of the object
+     *            Method that picks object
+     */
+    public void pickUpObject(int ind) {
+
+        if (ind != 228) {
+            String objectName = gp.obj[ind].name;
+
+            switch (objectName) {
+                case "Blood":
+                    hasBlood++;
+                    gp.obj[ind] = null;
+
+                    break;
+                case "Door":
+                    if(hasBlood > 4) {
+                        gp.obj[ind] = null;
+                        hasBlood-=5;
+                    }
+                    break;
             }
         }
     }

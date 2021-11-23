@@ -24,8 +24,8 @@ public class AdvGamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 
     //World Settings
-    public final int maxWorldCol = 30;
-    public final int maxWorldRow = 15;
+    public final int maxWorldCol = 48;
+    public final int maxWorldRow = 23;
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
     // FPS
