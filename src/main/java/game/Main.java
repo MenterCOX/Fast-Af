@@ -3,6 +3,12 @@ package game;
 import javax.swing.*;
 import java.util.Random;
 
+/**
+ * @author <Cox>
+ * @since <pre>нояб. 23, 2021</pre>
+ * @version 1.3
+ */
+
 public class Main {
     public static Writer writer = new Writer();
     public static JFrame frame = new JFrame("FastAF");

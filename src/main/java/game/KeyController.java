@@ -3,13 +3,12 @@ package game;
 import java.awt.event.*;
 
 /**
- * Это хуйня детектит, когда я стучу ебалом по клавиатуре. Потом Меняет переменные
- * и бьет лицо.
+ * Этот класс отвечает за данные, введенные с клавиатуры, а именно за движение игрока
  */
 public class KeyController extends KeyAdapter {
     /**
-     * @param e Input event from keyboard.
-     *          Method that
+     * @param e действия, вводимые с клавиатуры.
+     *
      */
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {

@@ -1,7 +1,5 @@
 package game;
 
-import java.util.Random;
-
 import static game.Main.r;
 
 public class GameLoop {
