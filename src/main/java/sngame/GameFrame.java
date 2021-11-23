@@ -23,13 +23,13 @@ public class GameFrame extends JPanel implements ActionListener {
     apple ap = new apple(Math.abs((int) (Math.random() * GameFrame.WIDTH - 1)), Math.abs((int) (Math.random() * GameFrame.HEIGHT - 1)));
     Timer timer = new Timer(1000 / speed, this);
 
-    Image img = new ImageIcon ("/snImages/apple7.png").getImage();
-    Image fon = new ImageIcon ("/snImages/pole2.png").getImage();
-    Image head = new ImageIcon ("/snImages/head.png").getImage();
-    Image left = new ImageIcon ("/snImages/left.png").getImage();
-    Image niz = new ImageIcon ("/snImages/head22.png").getImage();
-    Image right = new ImageIcon ("/snImages/head33.png").getImage();
-    Image body = new ImageIcon ("/snImages/telo1.png").getImage();
+    Image img = new ImageIcon ("res/snImages/apple7.png").getImage();
+    Image fon = new ImageIcon ("res/snImages/pole2.png").getImage();
+    Image head = new ImageIcon ("res/snImages/head.png").getImage();
+    Image left = new ImageIcon ("res/snImages/left.png").getImage();
+    Image niz = new ImageIcon ("res/snImages/head22.png").getImage();
+    Image right = new ImageIcon ("res/snImages/head33.png").getImage();
+    Image body = new ImageIcon ("res/snImages/telo1.png").getImage();
 
 
     public GameFrame() {
@@ -58,9 +58,9 @@ public class GameFrame extends JPanel implements ActionListener {
 
         //яблоко создание
 
-        //g.drawImage(img,ap.posX * SCALE + 4, ap.posY * SCALE + 4,null);
-        g.setColor(Color.RED);
-        g.fillOval(ap.posX*SCALE+1, ap.posY*SCALE+1,SCALE-5,SCALE-5 );
+        g.drawImage(img,ap.posX * SCALE + 4, ap.posY * SCALE + 4,null);
+       // g.setColor(Color.RED);
+       // g.fillOval(ap.posX*SCALE+1, ap.posY*SCALE+1,SCALE-5,SCALE-5 );
 
 
 
@@ -68,15 +68,16 @@ public class GameFrame extends JPanel implements ActionListener {
 
         for (int l = 1; l < s.lenght; l++) {
             //создание самой змеи
-            g.setColor(Color.GREEN);
-            g.fillRect(s.sX[l] * SCALE + 1, s.sY[l] * SCALE +1, SCALE-5, SCALE -5);
-            g.setColor(Color.WHITE);
-            g.fillRect(s.sX[1] * SCALE + 1, s.sY[1] * SCALE +1, SCALE-5, SCALE -5);
+            g.drawImage(body,s.sX[l] * SCALE + 1, s.sY[l] * SCALE + 1, null);
+            //g.setColor(Color.GREEN);
+           // g.fillRect(s.sX[l] * SCALE + 1, s.sY[l] * SCALE +1, SCALE-5, SCALE -5);
+           // g.setColor(Color.WHITE);
+           // g.fillRect(s.sX[1] * SCALE + 1, s.sY[1] * SCALE +1, SCALE-5, SCALE -5);
 
-            /*/if (s.direction==2)g.drawImage(niz,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
-            if (s.direction==1)g.drawImage(left,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
+            if (s.direction==2)g.drawImage(niz,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
+           if (s.direction==1)g.drawImage(left,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
             if (s.direction==3)g.drawImage(right,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
-            if (s.direction==0)g.drawImage(head,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);*/
+            if (s.direction==0)g.drawImage(head,s.sX[0] * SCALE + 1, s.sY[0] * SCALE + 1,null);
 
 
 
