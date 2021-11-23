@@ -32,7 +32,6 @@ public void move(){
     if(direction==3) sX[0]--;
 
 
-// возвращает змейку на поле
     if(sY[0]> GameFrame.WIDTH -1) sY[0]=0;
     if(sY[0] <0) sY[0]= GameFrame.HEIGHT -1;
     if(sX[0]> GameFrame.WIDTH -1) sX[0]=0;
