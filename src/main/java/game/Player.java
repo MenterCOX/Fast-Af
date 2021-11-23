@@ -1,11 +1,19 @@
 package game;
 
 import javax.swing.*;
-import java.util.Random;
 
 import static game.Main.r;
 
+/**
+ * Название класса говорит само за себя. Здесь ведётся учет здоровья игрока, движения игрока, слуачя проигрыша
+ * вызываются методы для добавления очков,
+ */
 public class Player {
+    /**
+     * Метод, который просчитывает здоровье игрока. Если оно равно 0, то вызывается метод,
+     * описывающий проигрыш
+     * @see Player#dead()
+     */
     public static void testdestroy() {
 
         for (int i = 0; i < Main.wallCount; ++i) {
@@ -20,12 +28,20 @@ public class Player {
         }
     }
 
+    /**
+     * Здесь вызываются методы, в которых игрок получает очки за скорость и монетки
+     * @see Bonuse#speedBonus()
+     * @see Bonuse#testCatchCoin()
+     */
     public static void testAddScore() {
 
         Bonuse.testCatchCoin();
         Bonuse.speedBonus();
     }
 
+    /**
+     * Метод, который возвращает игрока в исходное положение после его проигрыша
+     */
     private static void dead() {
         Main.dead = true;
         JOptionPane.showMessageDialog(Main.frame, "You lose!", "FastAF", JOptionPane.WARNING_MESSAGE);
@@ -43,6 +59,9 @@ public class Player {
         GameLoop.loop();
     }
 
+    /**
+     * Метод, отвечающий за движение игрока
+     */
     public static void movePlayer() {
         Main.xBackGround -= Main.speedPlayer;
         Main.xPlayer += Main.speedPlayer;

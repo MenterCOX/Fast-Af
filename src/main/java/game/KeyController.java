@@ -8,7 +8,7 @@ import java.awt.event.*;
 public class KeyController extends KeyAdapter {
     /**
      * @param e действия, вводимые с клавиатуры.
-     *
+     * Этот метод отвчечает за действия, которые производятся при нажатых клавишах
      */
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
@@ -26,7 +26,10 @@ public class KeyController extends KeyAdapter {
                 break;
         }
     }
-
+    /**
+     * @param e действия, вводимые с клавиатуры.
+     * Этот метод отвчечает за действия, которые производятся после нажатия клавиш
+     */
     public void keyReleased(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_RIGHT:
