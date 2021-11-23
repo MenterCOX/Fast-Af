@@ -11,6 +11,9 @@ public class AdvSuperObject {
     public String name;
     public boolean collision = false;
     public int worldX, worldY;
+    public Rectangle solidArea = new Rectangle(0,0,38,38); //SolidArea for objects
+    public int solidAreaDefaultX = 0;
+    public int solidAreaDefaultY = 0;
 
     public void draw(Graphics2D g2, AdvGamePanel gp) {
 
