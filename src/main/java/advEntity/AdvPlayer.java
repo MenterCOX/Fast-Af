@@ -71,22 +71,10 @@ public class AdvPlayer extends AdvEntity {
         if (keyH.upPressed == true || keyH.downPressed == true ||
                 keyH.leftPressed == true || keyH.rightPressed == true) {
 
-            if(keyH.upPressed == true){
-                direction = "up";
-
-            }
-            else if (keyH.downPressed == true){
-                direction = "down";
-
-            }
-            else if (keyH.leftPressed == true){
-                direction = "left";
-
-            }
-            else if (keyH.rightPressed == true){
-                direction = "right";
-
-            }
+            if(keyH.upPressed == true) direction = "up";
+            else if (keyH.downPressed == true) direction = "down";
+            else if (keyH.leftPressed == true) direction = "left";
+            else if (keyH.rightPressed == true) direction = "right";
 
             // Check advtile collision
             collisionOn = false;
@@ -117,12 +105,8 @@ public class AdvPlayer extends AdvEntity {
 
             spriteCounter++;
             if(spriteCounter > 15) {
-                if (spriteNum == 1) {
-                    spriteNum = 2;
-                }
-                else if (spriteNum == 2) {
-                    spriteNum = 1;
-                }
+                if (spriteNum == 1) spriteNum = 2;
+                else if (spriteNum == 2) spriteNum = 1;
                 spriteCounter = 1;
             }
         }
@@ -141,7 +125,6 @@ public class AdvPlayer extends AdvEntity {
                 case "Blood":
                     hasBlood++;
                     gp.obj[ind] = null;
-
                     break;
                 case "Door":
                     if(hasBlood > 4) {
@@ -156,42 +139,24 @@ public class AdvPlayer extends AdvEntity {
         }
     }
     public void draw(Graphics2D g2) {
-
-
         BufferedImage image = null;
 
         switch (direction) {
             case "up":
-                if(spriteNum == 1) {
-                    image = up1;
-                }
-                if (spriteNum == 2) {
-                    image = up2;
-                }
+                if(spriteNum == 1) image = up1;
+                if (spriteNum == 2) image = up2;
                 break;
             case "down":
-                if(spriteNum == 1) {
-                    image = down1;
-                }
-                if (spriteNum == 2) {
-                    image = down2;
-                }
+                if(spriteNum == 1) image = down1;
+                if (spriteNum == 2)image = down2;
                 break;
             case "left":
-                if(spriteNum == 1) {
-                    image = left1;
-                }
-                if (spriteNum == 2) {
-                    image = left2;
-                }
+                if(spriteNum == 1) image = left1;
+                if (spriteNum == 2) image = left2;
                 break;
             case "right":
-                if(spriteNum == 1) {
-                    image = right1;
-                }
-                if (spriteNum == 2) {
-                    image = right2;
-                }
+                if(spriteNum == 1) image = right1;
+                if (spriteNum == 2)] image = right2;
                 break;
         }
         g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
