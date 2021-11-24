@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GameLoopTest {
+class PlayerTest {
 
     @Test
     public void testSetFile() {
-        Assert.assertNotNull(new GameLoop());
+        Assert.assertNotNull(new Player());
     }
 }
