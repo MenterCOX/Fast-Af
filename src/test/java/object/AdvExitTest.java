@@ -1,14 +1,15 @@
-package advmain;
+package object;
 
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
+import sngame.GameFrame;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AdvGamePanelTest {
+class AdvExitTest {
     @Test
     public void testSetFile() {
-        Assert.assertNotNull(new AdvGamePanel());
-    }
+    Assert.assertNotNull(new AdvExit());
+}
 
 }

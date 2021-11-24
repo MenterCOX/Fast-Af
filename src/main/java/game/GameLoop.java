@@ -36,4 +36,4 @@ public class GameLoop {
         }
         if (!RaceMain.dead) loop();
     }
-}
+    }
