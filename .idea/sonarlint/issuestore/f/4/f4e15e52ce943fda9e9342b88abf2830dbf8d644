@@ -1,0 +1,20 @@
+
+?
+java:S1659"$Declare "worldY" on a separate line.(ª‡ãìıÿÿÿÿ
+g
+java:S1104
+"QMake image a static final constant or non-public and provide accessors if needed.(“×ªé
+f
+java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾
+k
+java:S1104"UMake collision a static final constant or non-public and provide accessors if needed.(ªò·À
+m
+java:S1104"RMake worldX a static final constant or non-public and provide accessors if needed.(ª‡ãìıÿÿÿÿ
+m
+java:S1104"RMake worldY a static final constant or non-public and provide accessors if needed.(ª‡ãìıÿÿÿÿ
+k
+java:S1104"UMake solidArea a static final constant or non-public and provide accessors if needed.(ŒÌš¢
+x
+java:S1104"]Make solidAreaDefaultX a static final constant or non-public and provide accessors if needed.(¶­—úÿÿÿÿ
+x
+java:S1104"]Make solidAreaDefaultY a static final constant or non-public and provide accessors if needed.(õäëƒúÿÿÿÿ
