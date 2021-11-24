@@ -14,14 +14,14 @@ import java.awt.*;
 public class AdvGamePanel extends JPanel implements Runnable{
 
     // SCREEN SETTINGS
-    final int originalTileSize = 16; // 16x16 advtile
-    final int scale = 3;
+    static int originalTileSize = 16; // 16x16 advtile
+    static int scale = 3;
 
-    public final int tileSize = originalTileSize * scale; // 48x48 advtile
-    public final int maxScreenCol = 16;
-    public final int maxScreenRow = 12;
-    public final int screenWidth = tileSize * maxScreenCol; // 768 pixels
-    public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
+    public static final int tileSize = originalTileSize * scale; // 48x48 advtile
+    public static int maxScreenCol = 16;
+    public static int maxScreenRow = 12;
+    public static int screenWidth = tileSize * maxScreenCol; // 768 pixels
+    public static int screenHeight = tileSize * maxScreenRow; // 576 pixels
 
     //World Settings
     public final int maxWorldCol = 48;
@@ -35,7 +35,7 @@ public class AdvGamePanel extends JPanel implements Runnable{
     AdvKeyHandler keyH = new AdvKeyHandler();
     public AdvCollisionChecker cChecker = new AdvCollisionChecker(this);
     public AdvSetter aSetter = new AdvSetter(this);
-    public UI ui = new UI(this);
+    public AdvUI aui = new AdvUI(this);
     Thread gameThread;
 
     //Entity and object
@@ -130,7 +130,7 @@ public class AdvGamePanel extends JPanel implements Runnable{
         player.draw(g2);
 
         // UI
-        ui.draw(g2);
+        aui.draw(g2);
 
         g2.dispose();
     }

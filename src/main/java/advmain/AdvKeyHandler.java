@@ -5,7 +5,6 @@ import java.awt.event.KeyListener;
 
 /**
  * Class that Handles keyboard input and detects what key was pressed/released
- * a
  */
 public class AdvKeyHandler implements KeyListener {
 
@@ -13,6 +12,7 @@ public class AdvKeyHandler implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
+        // Auto-Generated method = null
     }
 
     @Override

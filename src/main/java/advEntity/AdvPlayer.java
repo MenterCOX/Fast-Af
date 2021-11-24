@@ -150,7 +150,7 @@ public class AdvPlayer extends AdvEntity {
                     }
                     break;
                 case "Exit":
-                    gp.ui.gameFinished = true;
+                    gp.aui.gameFinished = true;
                     break;
             }
         }
