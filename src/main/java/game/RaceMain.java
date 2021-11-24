@@ -39,9 +39,7 @@ public class RaceMain {
      * @see FrameController#drawFrame()
      * @see GameLoop#loop()
      */
-    private static void startGame() {
-
-
+    public static void startGame() {
         for (int i = 0; i < RaceMain.wallCount; ++i) {
             xwall[i] =  ((r.nextInt(7000) + 1000));
             ywall[i] =  ((r.nextInt(400) ));
@@ -49,13 +47,7 @@ public class RaceMain {
         FrameController.drawFrame();
         GameLoop.loop();
     }
-
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public static void main() {
         startGame();
     }
 }

@@ -53,8 +53,7 @@ public class GUI extends JFrame{
         }
     }
     class Button2EventListener implements ActionListener {
-        public void actionPerformed (ActionEvent e) {
-            race.main(null);
+        public void actionPerformed (ActionEvent e) {race.main();
         }
     }
     class Button3EventListener implements ActionListener {

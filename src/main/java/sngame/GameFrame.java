@@ -34,12 +34,9 @@ public class GameFrame extends JPanel implements ActionListener {
 
     public GameFrame() {
         timer.start();
-        //вызов клавиатуры
         addKeyListener(new KeyBoard());
         setFocusable(true);
     }
-
-
     // создание клеточек на поле
     public void paint(Graphics g) {
 
