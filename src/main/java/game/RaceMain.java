@@ -49,5 +49,4 @@ public class RaceMain {
         FrameController.drawFrame();
         GameLoop.loop();
     }
-
 }

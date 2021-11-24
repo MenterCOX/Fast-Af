@@ -54,6 +54,8 @@ public class GUI extends JFrame{
     class Button2EventListener implements ActionListener {
         public void actionPerformed (ActionEvent e) {
             dolboeb = false;
+            RaceMain race = new RaceMain();
+            race.startGame();
         }
     }
     class Button3EventListener implements ActionListener {
