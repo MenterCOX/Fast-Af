@@ -1,8 +1,8 @@
 package advmain;
 
 import javax.swing.JFrame;
-public class Main {
-    public static void main(String[] args){
+public class AdvMain {
+    public static void main(){
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);

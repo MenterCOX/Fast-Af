@@ -1,6 +1,6 @@
 package game;
 
-import static game.Main.r;
+import static game.RaceMain.r;
 
 /**
  * Класс отвечает за игровой цикл и все что происходит в нем
@@ -19,14 +19,14 @@ public class GameLoop {
         Player.movePlayer();
         WallGeneration.wallgen();
 
-        if (Main.xBackGround <= -640) Main.xBackGround = 0;
-        Main.xCoin -= Main.speedPlayer;
-        --Main.scoreTime;
-        if (Main.xCoin < 0) {
-            Main.xCoin =(r.nextInt(50) * 10000 + 1000);
-            Main.yCoin = (r.nextInt(200) * 350 + 50);
+        if (RaceMain.xBackGround <= -640) RaceMain.xBackGround = 0;
+        RaceMain.xCoin -= RaceMain.speedPlayer;
+        --RaceMain.scoreTime;
+        if (RaceMain.xCoin < 0) {
+            RaceMain.xCoin =(r.nextInt(50) * 10000 + 1000);
+            RaceMain.yCoin = (r.nextInt(200) * 350 + 50);
         }
-        Main.writer.repaint();
+        RaceMain.writer.repaint();
 
         try {
             Thread.sleep(1000 / 30);
@@ -34,6 +34,6 @@ public class GameLoop {
             e.printStackTrace();
             Thread.currentThread().interrupt();
         }
-        if (!Main.dead) loop();
+        if (!RaceMain.dead) loop();
     }
 }

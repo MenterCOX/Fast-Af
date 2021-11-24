@@ -87,7 +87,7 @@ public class GameFrame extends JPanel implements ActionListener {
         g.drawString("Score:"+score, 460,20);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         jFrame = new JFrame("Title");
         //размер окна
         jFrame.setSize(WIDTH * SCALE +17, HEIGHT * SCALE + 40);

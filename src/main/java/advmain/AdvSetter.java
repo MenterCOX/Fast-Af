@@ -33,11 +33,11 @@ public class AdvSetter {
         gp.obj[1].worldY = 12 * gp.tileSize;
 
         gp.obj[2] = new AdvBlood();
-        gp.obj[2].worldX = 28 * gp.tileSize;
-        gp.obj[2].worldY = 16 * gp.tileSize;
+        gp.obj[2].worldX = 37 * gp.tileSize;
+        gp.obj[2].worldY = 14 * gp.tileSize;
 
         gp.obj[3] = new AdvBlood();
-        gp.obj[3].worldX = 22 * gp.tileSize;
+        gp.obj[3].worldX = 25 * gp.tileSize;
         gp.obj[3].worldY = 18 * gp.tileSize;
 
         gp.obj[4] = new AdvBlood();

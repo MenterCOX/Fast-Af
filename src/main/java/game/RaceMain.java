@@ -9,7 +9,7 @@ import java.util.Random;
  * @version 1.3
  */
 
-public class Main {
+public class RaceMain {
     public static Writer writer = new Writer();
     public static JFrame frame = new JFrame("FastAF");
     public static int xBackGround = 0;
@@ -41,7 +41,8 @@ public class Main {
      */
     private static void startGame() {
 
-        for (int i = 0; i < Main.wallCount; ++i) {
+
+        for (int i = 0; i < RaceMain.wallCount; ++i) {
             xwall[i] =  ((r.nextInt(7000) + 1000));
             ywall[i] =  ((r.nextInt(400) ));
         }

@@ -14,22 +14,22 @@ public class Writer extends JComponent {
      *          Здесь производится прорисовка всего вышеописанного
      */
     public void paint(Graphics g) {
-        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), Main.xBackGround, 0, null);
-        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), Main.xBackGround + 640, 0, null);
-        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Player.png")).getImage(), 100, Main.yPlayer, null);
-        for (int i = 0; i < Main.wallCount; ++i) {
-            g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Wall.png")).getImage(), Main.xwall[i], Main.ywall[i], null);
+        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), RaceMain.xBackGround, 0, null);
+        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/BackGround.png")).getImage(), RaceMain.xBackGround + 640, 0, null);
+        g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Player.png")).getImage(), 100, RaceMain.yPlayer, null);
+        for (int i = 0; i < RaceMain.wallCount; ++i) {
+            g.drawImage(new ImageIcon(Writer.class.getResource("/Images/Wall.png")).getImage(), RaceMain.xwall[i], RaceMain.ywall[i], null);
         }
         g.setColor(Color.YELLOW);
-        g.fillOval(Main.xCoin, Main.yCoin, 50, 50);
+        g.fillOval(RaceMain.xCoin, RaceMain.yCoin, 50, 50);
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 50));
-        g.drawString("$", Main.xCoin + 10, Main.yCoin + 42);
+        g.drawString("$", RaceMain.xCoin + 10, RaceMain.yCoin + 42);
         g.setColor(Color.BLUE);
         g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.drawString("Speed: " + Main.speedPlayer + "km/h", 0, 20);
-        g.drawString("Distance: " + Main.xPlayer / 30 + "m", 0, 40);
-        g.drawString("HP: " + Main.health, 520, 20);
-        g.drawString("Points: " + Main.score, 520, 40);
+        g.drawString("Speed: " + RaceMain.speedPlayer + "km/h", 0, 20);
+        g.drawString("Distance: " + RaceMain.xPlayer / 30 + "m", 0, 40);
+        g.drawString("HP: " + RaceMain.health, 520, 20);
+        g.drawString("Points: " + RaceMain.score, 520, 40);
     }
 }

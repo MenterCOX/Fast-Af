@@ -13,16 +13,16 @@ public class KeyController extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_RIGHT:
-                Main.go = true;
+                RaceMain.go = true;
                 break;
             case KeyEvent.VK_LEFT:
-                Main.stop = true;
+                RaceMain.stop = true;
                 break;
             case KeyEvent.VK_UP:
-                Main.left = true;
+                RaceMain.left = true;
                 break;
             case KeyEvent.VK_DOWN:
-                Main.right = true;
+                RaceMain.right = true;
                 break;
         }
     }
@@ -33,16 +33,16 @@ public class KeyController extends KeyAdapter {
     public void keyReleased(KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_RIGHT:
-                Main.go = false;
+                RaceMain.go = false;
                 break;
             case KeyEvent.VK_LEFT:
-                Main.stop = false;
+                RaceMain.stop = false;
                 break;
             case KeyEvent.VK_UP:
-                Main.left = false;
+                RaceMain.left = false;
                 break;
             case KeyEvent.VK_DOWN:
-                Main.right = false;
+                RaceMain.right = false;
                 break;
         }
     }

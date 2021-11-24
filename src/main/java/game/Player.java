@@ -2,7 +2,7 @@ package game;
 
 import javax.swing.*;
 
-import static game.Main.r;
+import static game.RaceMain.r;
 
 /**
  * Название класса говорит само за себя. Здесь ведётся учет здоровья игрока, движения игрока, слуачя проигрыша
@@ -16,14 +16,14 @@ public class Player {
      */
     public static void testdestroy() {
 
-        for (int i = 0; i < Main.wallCount; ++i) {
-            if (100 <= Main.xwall[i] +20 &&  300 >= Main.xwall[i] && Main.yPlayer <= Main.ywall[i] + 80 && Main.yPlayer + 80 >= Main.ywall[i] ) {
-                for (int j = 0; j < Main.wallCount; ++j) {
-                    Main.xwall[j] = ((r.nextInt(50) * 5000) + 5000);
-                    Main.ywall[i] = (50+(r.nextInt(200) * 330) );
+        for (int i = 0; i < RaceMain.wallCount; ++i) {
+            if (100 <= RaceMain.xwall[i] +20 &&  300 >= RaceMain.xwall[i] && RaceMain.yPlayer <= RaceMain.ywall[i] + 80 && RaceMain.yPlayer + 80 >= RaceMain.ywall[i] ) {
+                for (int j = 0; j < RaceMain.wallCount; ++j) {
+                    RaceMain.xwall[j] = ((r.nextInt(50) * 5000) + 5000);
+                    RaceMain.ywall[i] = (50+(r.nextInt(200) * 330) );
                 }
-                --Main.health;
-                if (Main.health == 0) dead();
+                --RaceMain.health;
+                if (RaceMain.health == 0) dead();
             }
         }
     }
@@ -43,19 +43,19 @@ public class Player {
      * Метод, который возвращает игрока в исходное положение после его проигрыша
      */
     private static void dead() {
-        Main.dead = true;
-        JOptionPane.showMessageDialog(Main.frame, "You lose!", "FastAF", JOptionPane.WARNING_MESSAGE);
-        Main.xBackGround = 0;
-        Main.xPlayer = 0;
-        Main.yPlayer = 200;
-        Main.speedPlayer = 0;
-        Main.health = 3;
-        Main.score = 0;
-        Main.dead = false;
-        Main.go = false;
-        Main.stop = false;
-        Main.left = false;
-        Main.right = false;
+        RaceMain.dead = true;
+        JOptionPane.showMessageDialog(RaceMain.frame, "You lose!", "FastAF", JOptionPane.WARNING_MESSAGE);
+        RaceMain.xBackGround = 0;
+        RaceMain.xPlayer = 0;
+        RaceMain.yPlayer = 200;
+        RaceMain.speedPlayer = 0;
+        RaceMain.health = 3;
+        RaceMain.score = 0;
+        RaceMain.dead = false;
+        RaceMain.go = false;
+        RaceMain.stop = false;
+        RaceMain.left = false;
+        RaceMain.right = false;
         GameLoop.loop();
     }
 
@@ -63,15 +63,15 @@ public class Player {
      * Метод, отвечающий за движение игрока
      */
     public static void movePlayer() {
-        Main.xBackGround -= Main.speedPlayer;
-        Main.xPlayer += Main.speedPlayer;
-        if (Main.go) ++Main.speedPlayer;
-        if (Main.stop) --Main.speedPlayer;
-        if (Main.left) Main.yPlayer -=  15;
-        if (Main.right) Main.yPlayer +=  15 ;
-        if (Main.speedPlayer < 0) Main.speedPlayer = 0;
-        if (Main.speedPlayer > 51) Main.speedPlayer = 51;
-        if (Main.yPlayer < 50) Main.yPlayer = 50;
-        if (Main.yPlayer > 350) Main.yPlayer = 350;
+        RaceMain.xBackGround -= RaceMain.speedPlayer;
+        RaceMain.xPlayer += RaceMain.speedPlayer;
+        if (RaceMain.go) ++RaceMain.speedPlayer;
+        if (RaceMain.stop) --RaceMain.speedPlayer;
+        if (RaceMain.left) RaceMain.yPlayer -=  15;
+        if (RaceMain.right) RaceMain.yPlayer +=  15 ;
+        if (RaceMain.speedPlayer < 0) RaceMain.speedPlayer = 0;
+        if (RaceMain.speedPlayer > 51) RaceMain.speedPlayer = 51;
+        if (RaceMain.yPlayer < 50) RaceMain.yPlayer = 50;
+        if (RaceMain.yPlayer > 350) RaceMain.yPlayer = 350;
     }
 }
