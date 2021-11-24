@@ -52,7 +52,7 @@ public class AdvUI {
             g2.drawString("x "+gp.player.hasBlood, 40, 550);
 
             g2.setFont(tmn15);
-            g2.setColor(Color.pink);
+            g2.setColor(Color.white);
             g2.drawString("You need 5 blood points to escape this place", 20,40);
         }
     }

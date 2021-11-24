@@ -135,6 +135,8 @@ public class AdvPlayer extends AdvEntity {
                 case "Exit":
                     gp.aui.gameFinished = true;
                     break;
+                default:
+                    System.out.println("ПНХ");
             }
         }
     }
@@ -156,7 +158,7 @@ public class AdvPlayer extends AdvEntity {
                 break;
             case "right":
                 if(spriteNum == 1) image = right1;
-                if (spriteNum == 2)] image = right2;
+                if (spriteNum == 2) image = right2;
                 break;
         }
         g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);

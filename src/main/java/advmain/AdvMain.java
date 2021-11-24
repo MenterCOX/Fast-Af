@@ -2,7 +2,7 @@ package advmain;
 
 import javax.swing.JFrame;
 public class AdvMain {
-    public static void main(){
+     public AdvMain() {
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);

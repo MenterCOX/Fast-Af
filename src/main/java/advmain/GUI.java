@@ -11,9 +11,8 @@ public class GUI extends JFrame{
 
     private JLabel label = new JLabel("Choose game");
     AdvGamePanel gp = new AdvGamePanel();
-    AdvMain adv = new AdvMain();
-    RaceMain race = new RaceMain();
-    GameFrame sn = new GameFrame();
+
+    public boolean dolboeb = true;
 
     public GUI( ) {
         this.setTitle("Fast-Af");
@@ -49,15 +48,17 @@ public class GUI extends JFrame{
 
     class Button1EventListener implements ActionListener {
         public void actionPerformed (ActionEvent e) {
-            adv.main();
+            AdvMain adv = new AdvMain();
         }
     }
     class Button2EventListener implements ActionListener {
-        public void actionPerformed (ActionEvent e) {race.main();
+        public void actionPerformed (ActionEvent e) {
+            dolboeb = false;
         }
     }
     class Button3EventListener implements ActionListener {
         public void actionPerformed (ActionEvent e) {
+            GameFrame sn = new GameFrame();
             sn.main();
         }
     }
