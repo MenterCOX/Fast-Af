@@ -8,6 +8,10 @@ public class AdvCollisionChecker {
 
     AdvGamePanel gp;
 
+    /**
+     * @param gp
+     * Constructor
+     */
     public AdvCollisionChecker(AdvGamePanel gp) {
         this.gp = gp;
     }

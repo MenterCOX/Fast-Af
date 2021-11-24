@@ -15,7 +15,7 @@ public class AdvPlayer extends AdvEntity {
 
     public final int screenX;
     public final int screenY;
-    int hasBlood = 0;
+    public int hasBlood = 0;
 
     public AdvPlayer(AdvGamePanel gp, AdvKeyHandler keyH) {
 
@@ -31,7 +31,7 @@ public class AdvPlayer extends AdvEntity {
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         solidArea.width = 24;
-        solidArea.height = 32;
+        solidArea.height = 28;
 
         setDefaultValues();
         getPlayerImage();
@@ -148,6 +148,9 @@ public class AdvPlayer extends AdvEntity {
                         gp.obj[ind] = null;
                         hasBlood-=5;
                     }
+                    break;
+                case "Exit":
+                    gp.ui.gameFinished = true;
                     break;
             }
         }

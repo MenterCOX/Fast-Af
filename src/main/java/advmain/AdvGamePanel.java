@@ -9,7 +9,7 @@ import java.awt.*;
 
 /**
  * SubClass of the JPanel. Game screen function. It will
- * draw it inside jframe window. implements runnable for using Thread
+ * draw it inside jframe window. Implements runnable for using Thread
  */
 public class AdvGamePanel extends JPanel implements Runnable{
 
@@ -25,17 +25,20 @@ public class AdvGamePanel extends JPanel implements Runnable{
 
     //World Settings
     public final int maxWorldCol = 48;
-    public final int maxWorldRow = 23;
-    public final int worldWidth = tileSize * maxWorldCol;
-    public final int worldHeight = tileSize * maxWorldRow;
+    public final int maxWorldRow = 25;
+
     // FPS
     double FPS = 60d;
 
+    // System
     AdvTileManager tileM = new AdvTileManager(this);
     AdvKeyHandler keyH = new AdvKeyHandler();
-    Thread gameThread;
     public AdvCollisionChecker cChecker = new AdvCollisionChecker(this);
     public AdvSetter aSetter = new AdvSetter(this);
+    public UI ui = new UI(this);
+    Thread gameThread;
+
+    //Entity and object
     public AdvPlayer player = new AdvPlayer(this, keyH);
     public AdvSuperObject obj[] = new AdvSuperObject[10];
 
@@ -45,7 +48,6 @@ public class AdvGamePanel extends JPanel implements Runnable{
      * Constructor for Game Panel Class.
      */
     public AdvGamePanel() {
-
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
@@ -104,6 +106,11 @@ public class AdvGamePanel extends JPanel implements Runnable{
 
         player.update();
     }
+
+    /**
+     * @param g
+     *
+     */
     public void paintComponent(Graphics g){
         //This panel is a subclass of JPanel
         super.paintComponent(g);
@@ -121,6 +128,9 @@ public class AdvGamePanel extends JPanel implements Runnable{
 
         // Player
         player.draw(g2);
+
+        // UI
+        ui.draw(g2);
 
         g2.dispose();
     }
