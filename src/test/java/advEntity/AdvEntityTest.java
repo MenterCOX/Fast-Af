@@ -1,13 +1,14 @@
-package advmain;
+package advEntity;
 
+import advmain.AdvUI;
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AdvSetterTest {
-
+class AdvEntityTest {
     @Test
-    void setObject() {  Assert.assertNotNull(new AdvSetter(null));
-    }
+    void draw() { Assert.assertNotNull(new AdvEntity());
+
+}
 }

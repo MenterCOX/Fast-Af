@@ -9,14 +9,14 @@ class AdvKeyHandlerTest {
 
     @Test
     void keyTyped() {
-            Assert.assertNotNull(new GUI());
+            Assert.assertNotNull(new AdvKeyHandler());
     }
 
     @Test
-    void keyPressed() {Assert.assertNotNull(new GUI());
+    void keyPressed() {Assert.assertNotNull(new AdvKeyHandler());
     }
 
     @Test
-    void keyReleased() {Assert.assertNotNull(new GUI());
+    void keyReleased() {Assert.assertNotNull(new AdvKeyHandler());
     }
 }

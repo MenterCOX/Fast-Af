@@ -8,6 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdvUITest {
 
     @Test
-    void draw() { Assert.assertNotNull(new GUI());
+    void draw() { Assert.assertNotNull(new AdvUI(null));
     }
 }

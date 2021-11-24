@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdvCollisionCheckerTest {
 
     @Test
-    void checkTile() {Assert.assertNotNull(new GUI());
+    void checkTile() {Assert.assertNotNull(new AdvCollisionChecker(null));
     }
 
     @Test
     void checkObject() {
-        Assert.assertNotNull(new GUI());
+        Assert.assertNotNull(new AdvCollisionChecker(null));
     }
 }

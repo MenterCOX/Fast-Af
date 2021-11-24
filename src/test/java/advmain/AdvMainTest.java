@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdvMainTest {
     @Test
     public void testSetFile() {
-        Assert.assertNotNull(new GUI());
+        Assert.assertNotNull(new AdvMainTest());
 
 }
 }

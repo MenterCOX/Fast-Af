@@ -1,13 +1,15 @@
 package advmain;
 
+import game.WallGeneration;
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AdvSetterTest {
-
+class GUITest {
     @Test
-    void setObject() {  Assert.assertNotNull(new AdvSetter(null));
+    public void testSetFile() {
+        Assert.assertNotNull(new GUI());
     }
 }
+
