@@ -11,4 +11,8 @@ class WallGenerationTest {
     public void testSetFile() {
         Assert.assertNotNull(new WallGeneration());
     }
+
+    @Test
+    void wallgen() {Assert.assertNotNull(new WallGeneration());
+    }
 }
